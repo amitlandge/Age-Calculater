@@ -24,6 +24,12 @@ body {
     min-width: 300px;
     align-items: center;
 }
+.calculate{
+    padding: 0.7rem 2rem;
+    font-family: inherit;
+    margin: 1rem;
+    cursor: pointer;
+}
 .container label {
     font-size: 25px;
     margin-bottom: 1rem;
@@ -40,8 +46,4 @@ body {
 }
 .container .age > span {
     font-weight: bold;
-}
-.error {
-    display: none;
-    font-size: 40px;
 }

@@ -1,4 +1,6 @@
-
+let ageEle = document.querySelector(".age");
+let calculate = document.querySelector(".calculate");
+let container = document.querySelector(".container");
 
 function getAge() {
   let dob = document.getElementById("dob").value;
@@ -6,6 +8,7 @@ function getAge() {
   let split = dob.split("-");
 
   let getYear = split[0];
+
   let getMonth = split[1];
   let getDate = split[2];
   let ageDate = {
@@ -29,11 +32,19 @@ function calcAge(currDate, ageDate) {
 }
 
 function displayAge(age, month, date) {
-  document.getElementById("years").innerHTML = age;
-  document.getElementById("months").innerHTML = Math.abs(month);
-  document.getElementById("days").innerHTML = Math.abs(date);
+  
+  if (age < 0) {
+    alert("Please Enter Valid Date");
+    return;
+  } else if (age > 0) {
+    document.getElementById("years").innerHTML = age;
+    document.getElementById("months").innerHTML = Math.abs(month);
+    document.getElementById("days").innerHTML = Math.abs(date);
+    
+  }
 }
-document.addEventListener("click", getAgeHandler);
+calculate.addEventListener("click", getAgeHandler);
 function getAgeHandler() {
   getAge();
+  displayAge();
 }
